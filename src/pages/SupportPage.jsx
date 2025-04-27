@@ -85,7 +85,7 @@ const SupportPage = () => {
                   Donate via GoFundMe
                 </a>
                 <p className="text-sm text-gray-600 mt-3">
-                  For other donation inquiries, please contact us at: donations@sowda.org
+                  For other donation inquiries, please contact us at: info@sowda.org
                 </p>
               </div>
             </div>

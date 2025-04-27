@@ -20,7 +20,7 @@ const AboutPage = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <p className="text-gray-700 mb-4">
-                Somali Women Development Agency (SOWDA) was founded in 2010 by a dedicated group of
+                Somali Women Development Agency (SOWDA) was founded in 1999 by a dedicated group of
                 Somali women who recognized the unique challenges faced by women and children in their
                 communities.
               </p>
