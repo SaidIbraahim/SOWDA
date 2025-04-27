@@ -2,7 +2,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram
 
 const ContactPage = () => {
   // WhatsApp link
-  const whatsappNumber = "252907841579";
+  const whatsappNumber = "252907736523";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   return (
@@ -50,9 +50,9 @@ const ContactPage = () => {
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Phone</h3>
                       <p className="text-gray-700">
-                        Main Office: +252 90 7777777<br />
-                        Administration: +252 90 6666666<br />
-                        Programs: +252 90 5555555
+                        Main Office: +252 90 7736523<br />
+                        Administration: +252 90 xxxxxxx<br />
+                        Programs: +252 90 xxxxxx
                       </p>
                     </div>
                   </div>
@@ -91,10 +91,7 @@ const ContactPage = () => {
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Email</h3>
                       <p className="text-gray-700">
-                        General Inquiries: <a href="mailto:info@sowda.org" className="text-primary hover:underline">info@sowda.org</a><br />
-                        Support: <a href="mailto:support@sowda.org" className="text-primary hover:underline">support@sowda.org</a><br />
-                        Partnerships: <a href="mailto:partnerships@sowda.org" className="text-primary hover:underline">partnerships@sowda.org</a><br />
-                        Volunteer: <a href="mailto:volunteer@sowda.org" className="text-primary hover:underline">volunteer@sowda.org</a>
+                        Support or General Inquiries: <a href="mailto:info@sowda.org" className="text-primary hover:underline">info@sowda.org</a><br />
                       </p>
                     </div>
                   </div>
