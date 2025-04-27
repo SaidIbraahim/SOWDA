@@ -182,7 +182,7 @@ const ContactPage = () => {
               <h3 className="text-xl font-semibold mb-2">How can I volunteer with SOWDA?</h3>
               <p className="text-gray-700">
                 You can volunteer by contacting us directly at
-                <a href="mailto:volunteer@sowda.org" className="text-primary hover:underline"> volunteer@sowda.org</a>. We welcome volunteers with various skills and backgrounds.
+                <a href="mailto:info@sowda.org" className="text-primary hover:underline"> info@sowda.org</a>. We welcome volunteers with various skills and backgrounds.
               </p>
             </div>
             
@@ -190,7 +190,7 @@ const ContactPage = () => {
               <h3 className="text-xl font-semibold mb-2">How can organizations partner with SOWDA?</h3>
               <p className="text-gray-700">
                 Organizations interested in partnerships can reach out via email at
-                <a href="mailto:partnerships@sowda.org" className="text-primary hover:underline"> partnerships@sowda.org</a> with details about potential collaboration opportunities.
+                <a href="mailto:info@sowda.org" className="text-primary hover:underline"> info@sowda.org</a> with details about potential collaboration opportunities.
               </p>
             </div>
           </div>
