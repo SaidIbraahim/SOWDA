@@ -21,7 +21,7 @@ const HomePage = () => {
                 Support Our Work
               </Link>
               <a
-                href="https://www.gofundme.com/f/sowda"
+                href="https://gofund.me/32716c10"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn bg-[#00b964] hover:bg-[#00a058] text-white flex items-center"
@@ -162,7 +162,7 @@ const HomePage = () => {
               Support Our Work
             </Link>
             <a
-              href="https://www.gofundme.com/f/sowda"
+              href="https://gofund.me/32716c10"
               target="_blank"
               rel="noopener noreferrer"
               className="btn bg-[#00b964] text-white hover:bg-[#00a058] flex items-center justify-center"

@@ -77,7 +77,7 @@ const SupportPage = () => {
                   Support our work through GoFundMe:
                 </p>
                 <a 
-                  href="https://www.gofundme.com/f/sowda" 
+                  href="https://gofund.me/32716c10" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 bg-[#00b964] text-white font-semibold rounded-md hover:bg-[#00a058] transition-colors"
