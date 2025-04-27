@@ -1,5 +1,6 @@
 import { FaHeart } from 'react-icons/fa';
 
+// Donate button component with GoFundMe link
 const DonateButton = () => {
   return (
     <a
