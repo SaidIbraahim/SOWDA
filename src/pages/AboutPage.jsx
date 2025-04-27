@@ -145,39 +145,6 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Team Section (Placeholder) */}
-      <section className="py-12">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold mb-8">Our Team</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-10">
-            Our dedicated team of professionals works tirelessly to implement our mission and create positive change in communities across Somalia.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
-            <div className="bg-gray-100 p-8 rounded-lg">
-              <div className="w-24 h-24 bg-neutral rounded-full mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold">Amina Hassan</h3>
-              <p className="text-gray-600">Executive Director</p>
-            </div>
-            
-            {/* Team Member 2 */}
-            <div className="bg-gray-100 p-8 rounded-lg">
-              <div className="w-24 h-24 bg-neutral rounded-full mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold">Fadumo Ali</h3>
-              <p className="text-gray-600">Program Manager</p>
-            </div>
-            
-            {/* Team Member 3 */}
-            <div className="bg-gray-100 p-8 rounded-lg">
-              <div className="w-24 h-24 bg-neutral rounded-full mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold">Hassan Mohamed</h3>
-              <p className="text-gray-600">Community Outreach Coordinator</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

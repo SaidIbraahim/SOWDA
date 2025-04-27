@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaHandsHelping, FaChartLine, FaUsers } from 'react-icons/fa';
+import { FaHandsHelping, FaChartLine, FaUsers, FaHeart } from 'react-icons/fa';
 
 const HomePage = () => {
   return (
@@ -20,6 +20,14 @@ const HomePage = () => {
               <Link to="/support" className="btn-primary">
                 Support Our Work
               </Link>
+              <a
+                href="https://www.gofundme.com/f/sowda"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn bg-[#00b964] hover:bg-[#00a058] text-white flex items-center"
+              >
+                <FaHeart className="mr-2" /> Donate Now
+              </a>
               <Link to="/about" className="btn-outline">
                 Learn More
               </Link>
@@ -153,6 +161,14 @@ const HomePage = () => {
             <Link to="/support" className="btn bg-white text-primary hover:bg-gray-100">
               Support Our Work
             </Link>
+            <a
+              href="https://www.gofundme.com/f/sowda"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn bg-[#00b964] text-white hover:bg-[#00a058] flex items-center justify-center"
+            >
+              <FaHeart className="mr-2" /> Donate Now
+            </a>
             <Link to="/contact" className="btn border border-white text-white hover:bg-white/10">
               Contact Us
             </Link>

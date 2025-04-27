@@ -73,11 +73,19 @@ const SupportPage = () => {
                 Your financial support allows us to continue our vital programs and reach more communities in need.
               </p>
               <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-800 font-medium">
-                  For donation inquiries, please contact us directly:
+                <p className="text-sm text-gray-800 font-medium mb-3">
+                  Support our work through GoFundMe:
                 </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  Email: donations@sowda.org
+                <a 
+                  href="https://www.gofundme.com/f/sowda" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-[#00b964] text-white font-semibold rounded-md hover:bg-[#00a058] transition-colors"
+                >
+                  Donate via GoFundMe
+                </a>
+                <p className="text-sm text-gray-600 mt-3">
+                  For other donation inquiries, please contact us at: donations@sowda.org
                 </p>
               </div>
             </div>

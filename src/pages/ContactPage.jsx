@@ -1,41 +1,9 @@
-import { useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaClock } from 'react-icons/fa';
 
 const ContactPage = () => {
-  // Form state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError('');
-
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-    }, 1500);
-  };
+  // WhatsApp link
+  const whatsappNumber = "252907841579";
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   return (
     <div>
@@ -49,181 +17,136 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact Info and Form */}
+      {/* Contact Info */}
       <section className="py-12">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Contact Info */}
-            <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
+              <h2 className="text-2xl font-bold mb-6 text-center">Our Contact Information</h2>
               
-              <div className="space-y-6">
-                {/* Office Address */}
-                <div className="flex items-start">
-                  <div className="mt-1 mr-4 text-primary">
-                    <FaMapMarkerAlt size={24} />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  {/* Office Address */}
+                  <div className="flex items-start">
+                    <div className="mt-1 mr-4 text-primary">
+                      <FaMapMarkerAlt size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Our Office</h3>
+                      <p className="text-gray-700">
+                        Garowe Office<br />
+                        Wadajir District<br />
+                        Garowe, Puntland<br />
+                        Somalia
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Our Office</h3>
-                    <p className="text-gray-700">
-                      Garowe Office<br />
-                      Wadajir District<br />
-                      Garowe, Puntland<br />
-                      Somalia
-                    </p>
+                  
+                  {/* Phone */}
+                  <div className="flex items-start">
+                    <div className="mt-1 mr-4 text-primary">
+                      <FaPhone size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Phone</h3>
+                      <p className="text-gray-700">
+                        Main Office: +252 90 7777777<br />
+                        Administration: +252 90 6666666<br />
+                        Programs: +252 90 5555555
+                      </p>
+                    </div>
                   </div>
                 </div>
                 
-                {/* Phone */}
-                <div className="flex items-start">
-                  <div className="mt-1 mr-4 text-primary">
-                    <FaPhone size={24} />
+                <div className="space-y-6">
+                  {/* WhatsApp */}
+                  <div className="flex items-start">
+                    <div className="mt-1 mr-4 text-green-500">
+                      <FaWhatsapp size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
+                      <p className="text-gray-700">
+                        <a 
+                          href={whatsappLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-green-600 hover:underline flex items-center"
+                        >
+                          +{whatsappNumber} 
+                          <span className="ml-2 px-2 py-0.5 text-xs bg-green-100 text-green-800 rounded-full">
+                            Chat Now
+                          </span>
+                        </a>
+                        <span className="text-sm text-gray-600 block mt-1">Quick response for urgent inquiries</span>
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                    <p className="text-gray-700">
-                      +252 90 7777777<br />
-                      Mon - Fri: 8:00 AM - 5:00 PM (EAT)
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Email */}
-                <div className="flex items-start">
-                  <div className="mt-1 mr-4 text-primary">
-                    <FaEnvelope size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Email</h3>
-                    <p className="text-gray-700">
-                      General Inquiries: info@sowda.org<br />
-                      Support: support@sowda.org
-                    </p>
+                  
+                  {/* Email */}
+                  <div className="flex items-start">
+                    <div className="mt-1 mr-4 text-primary">
+                      <FaEnvelope size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Email</h3>
+                      <p className="text-gray-700">
+                        General Inquiries: <a href="mailto:info@sowda.org" className="text-primary hover:underline">info@sowda.org</a><br />
+                        Support: <a href="mailto:support@sowda.org" className="text-primary hover:underline">support@sowda.org</a><br />
+                        Partnerships: <a href="mailto:partnerships@sowda.org" className="text-primary hover:underline">partnerships@sowda.org</a><br />
+                        Volunteer: <a href="mailto:volunteer@sowda.org" className="text-primary hover:underline">volunteer@sowda.org</a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
               
               {/* Office Hours */}
               <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">Office Hours</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex justify-between">
-                    <span>Monday - Friday:</span>
-                    <span>8:00 AM - 5:00 PM</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Saturday:</span>
-                    <span>9:00 AM - 1:00 PM</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Sunday:</span>
-                    <span>Closed</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-              
-              {submitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <h3 className="text-green-700 text-xl font-semibold mb-2">Thank You!</h3>
-                  <p className="text-green-600">
-                    Your message has been received. We'll get back to you as soon as possible.
-                  </p>
+                <div className="flex items-start mb-4">
+                  <FaClock className="text-primary mt-1 mr-3" size={24} />
+                  <h3 className="text-xl font-semibold">Office Hours</h3>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {error && (
-                    <div className="p-4 bg-red-50 border-l-4 border-red-500 text-red-700">
-                      <p>{error}</p>
-                    </div>
-                  )}
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Name */}
-                    <div>
-                      <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      />
-                    </div>
-                    
-                    {/* Email */}
-                    <div>
-                      <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-                        Your Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex justify-between">
+                      <span>Monday - Friday:</span>
+                      <span>8:00 AM - 5:00 PM</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Saturday:</span>
+                      <span>9:00 AM - 1:00 PM</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Sunday:</span>
+                      <span>Closed</span>
+                    </li>
+                  </ul>
+                  <div className="text-gray-700">
+                    <p><strong>Time Zone:</strong> East Africa Time (EAT)</p>
+                    <p className="mt-2"><strong>Note:</strong> Our staff is available for emergencies outside of regular office hours. Please contact us via WhatsApp for urgent matters.</p>
                   </div>
-                  
-                  {/* Subject */}
-                  <div>
-                    <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    />
-                  </div>
-                  
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows="6"
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    ></textarea>
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="btn-primary flex items-center justify-center"
-                  >
-                    {submitting ? (
-                      <>
-                        <span className="mr-2">Sending</span>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      </>
-                    ) : (
-                      'Send Message'
-                    )}
-                  </button>
-                </form>
-              )}
+                </div>
+              </div>
+              
+              {/* Social Media */}
+              <div className="mt-8 text-center">
+                <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
+                <div className="flex justify-center space-x-6">
+                  <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="Facebook">
+                    <FaFacebook size={28} />
+                  </a>
+                  <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="Twitter">
+                    <FaTwitter size={28} />
+                  </a>
+                  <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="Instagram">
+                    <FaInstagram size={28} />
+                  </a>
+                  <a href={whatsappLink} className="text-green-500 hover:text-green-600 transition-colors" aria-label="WhatsApp">
+                    <FaWhatsapp size={28} />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -232,12 +155,15 @@ const ContactPage = () => {
       {/* Map Section (Placeholder) */}
       <section className="py-8">
         <div className="container-custom">
-          <div className="h-80 bg-neutral rounded-lg flex items-center justify-center">
-            <p className="text-white text-xl font-semibold">Map of Garowe Office Location</p>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6 text-center">Find Us</h2>
+            <div className="h-80 bg-neutral rounded-lg flex items-center justify-center">
+              <p className="text-white text-xl font-semibold">Map of Garowe Office Location</p>
+            </div>
+            <p className="text-sm text-gray-500 mt-2 text-center">
+              In a production environment, this would be replaced with an actual map showing the office location.
+            </p>
           </div>
-          <p className="text-sm text-gray-500 mt-2 text-center">
-            In a production environment, this would be replaced with an actual map showing the office location.
-          </p>
         </div>
       </section>
 
@@ -258,16 +184,16 @@ const ContactPage = () => {
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-2">How can I volunteer with SOWDA?</h3>
               <p className="text-gray-700">
-                You can volunteer by filling out the form on our Support page or contacting us directly at
-                volunteer@sowda.org. We welcome volunteers with various skills and backgrounds.
+                You can volunteer by contacting us directly at
+                <a href="mailto:volunteer@sowda.org" className="text-primary hover:underline"> volunteer@sowda.org</a>. We welcome volunteers with various skills and backgrounds.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-2">How can organizations partner with SOWDA?</h3>
               <p className="text-gray-700">
-                Organizations interested in partnerships can reach out through our Contact form or email
-                partnerships@sowda.org with details about potential collaboration opportunities.
+                Organizations interested in partnerships can reach out via email at
+                <a href="mailto:partnerships@sowda.org" className="text-primary hover:underline"> partnerships@sowda.org</a> with details about potential collaboration opportunities.
               </p>
             </div>
           </div>

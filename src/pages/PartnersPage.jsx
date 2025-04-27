@@ -87,51 +87,8 @@ const PartnersPage = () => {
         </div>
       </section>
 
-      {/* Partnership Types */}
-      <section className="py-12 bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Types of Partnerships</h2>
-            
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">Implementation Partners</h3>
-                <p className="text-gray-700">
-                  We collaborate with local organizations to implement programs on the ground, 
-                  leveraging their expertise and community connections to ensure effectiveness and sustainability.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">Funding Partners</h3>
-                <p className="text-gray-700">
-                  Our funding partners provide financial support for our programs, enabling us to 
-                  reach more communities and implement more comprehensive initiatives.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">Technical Partners</h3>
-                <p className="text-gray-700">
-                  We work with technical experts and institutions to ensure our programs are 
-                  evidence-based and incorporate best practices in various fields.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">Advocacy Partners</h3>
-                <p className="text-gray-700">
-                  Together with advocacy partners, we work to influence policies and raise awareness 
-                  about critical issues affecting women and children in Somalia.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Become a Partner */}
-      <section className="py-12">
+      <section className="py-12 bg-gray-50">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Become a Partner</h2>
