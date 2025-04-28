@@ -24,7 +24,8 @@ const projectsData = [
     description: "Development of a comprehensive healthcare facility in Bosaso to provide quality medical services to the community. This project aims to improve healthcare access and outcomes for the local population.",
     startDate: "February 2023",
     image: HealthcareCenterOngoing,
-    altText: "Somali German Hospital: New healthcare facility being constructed in Bosaso to provide medical services to the local community"
+    altText: "Somali German Hospital: New healthcare facility being constructed in Bosaso to provide medical services to the local community",
+    goFundMeLink: "https://gofund.me/32716c10"
   },
   {
     id: 2,
@@ -135,8 +136,7 @@ const projectCategories = [
   "Education",
   "Environment", 
   "Peacebuilding",
-  "Emergency",
-  "Economic"
+  "Emergency"
 ];
 
 // Project statuses for filtering

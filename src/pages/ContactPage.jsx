@@ -1,9 +1,57 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaClock, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { useState } from 'react';
 
 const ContactPage = () => {
   // WhatsApp link
   const whatsappNumber = "252907736523";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  
+  // State for FAQ accordion
+  const [openFAQ, setOpenFAQ] = useState(null);
+  
+  // Toggle FAQ item
+  const toggleFAQ = (id) => {
+    setOpenFAQ(openFAQ === id ? null : id);
+  };
+  
+  // FAQ data
+  const faqData = [
+    {
+      id: 1,
+      question: "What areas of Somalia do you operate in?",
+      answer: "SOWDA operates throughout Somalia, with a focus on Puntland, Somaliland, and South Central regions. Our headquarters is in Garowe, Puntland."
+    },
+    {
+      id: 2,
+      question: "How can I volunteer with SOWDA?",
+      answer: "You can volunteer by contacting us directly at info@sowda.org. We welcome volunteers with various skills and backgrounds, including healthcare professionals, educators, project managers, and communications specialists."
+    },
+    {
+      id: 3,
+      question: "How can organizations partner with SOWDA?",
+      answer: "Organizations interested in partnerships can reach out via email at info@sowda.org with details about potential collaboration opportunities. We're open to partnerships with NGOs, government agencies, academic institutions, and private sector entities."
+    },
+    {
+      id: 4,
+      question: "Do you accept donations?",
+      answer: "Yes, we accept donations that support our various programs and initiatives. You can donate via bank transfer, mobile money, or through our partner platforms. For more information, please contact us at info@sowda.org."
+    },
+    {
+      id: 5,
+      question: "What types of projects does SOWDA focus on?",
+      answer: "SOWDA focuses on healthcare, education, emergency response, environmental conservation, peacebuilding, and women's empowerment projects. Our initiatives are designed to address the most pressing needs of Somali communities."
+    },
+    {
+      id: 6,
+      question: "How can I report an issue or provide feedback?",
+      answer: "You can report issues or provide feedback by emailing info@sowda.org or calling our main office number. We value transparency and continuous improvement in all our operations."
+    },
+    {
+      id: 7,
+      question: "Do you provide internship opportunities?",
+      answer: "Yes, we offer internship opportunities for students and recent graduates interested in humanitarian work, development, and nonprofit management. Please send your resume and a cover letter to info@sowda.org."
+    }
+  ];
 
   return (
     <div>
@@ -22,14 +70,14 @@ const ContactPage = () => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-              <h2 className="text-2xl font-bold mb-6 text-center">Our Contact Information</h2>
+              <h2 className="text-2xl font-bold mb-8 text-center border-b pb-4">Our Contact Information</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   {/* Office Address */}
-                  <div className="flex items-start">
-                    <div className="mt-1 mr-4 text-primary">
-                      <FaMapMarkerAlt size={28} />
+                  <div className="flex items-start transition-all p-4 rounded-lg hover:bg-gray-50">
+                    <div className="mt-1 mr-4 text-primary bg-primary/10 p-3 rounded-full">
+                      <FaMapMarkerAlt size={24} />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Our Office</h3>
@@ -43,14 +91,14 @@ const ContactPage = () => {
                   </div>
                   
                   {/* Phone */}
-                  <div className="flex items-start">
-                    <div className="mt-1 mr-4 text-primary">
-                      <FaPhone size={28} />
+                  <div className="flex items-start transition-all p-4 rounded-lg hover:bg-gray-50">
+                    <div className="mt-1 mr-4 text-primary bg-primary/10 p-3 rounded-full">
+                      <FaPhone size={24} />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Phone</h3>
                       <p className="text-gray-700">
-                        Main Office: +252 90 7736523<br />
+                        Main Office: <a href="tel:+252907736523" className="hover:underline">+252 90 7736523</a><br />
                         Administration: +252 90 xxxxxxx<br />
                         Programs: +252 90 xxxxxx
                       </p>
@@ -60,9 +108,9 @@ const ContactPage = () => {
                 
                 <div className="space-y-6">
                   {/* WhatsApp */}
-                  <div className="flex items-start">
-                    <div className="mt-1 mr-4 text-green-500">
-                      <FaWhatsapp size={28} />
+                  <div className="flex items-start transition-all p-4 rounded-lg hover:bg-gray-50">
+                    <div className="mt-1 mr-4 text-green-500 bg-green-100 p-3 rounded-full">
+                      <FaWhatsapp size={24} />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
@@ -71,10 +119,10 @@ const ContactPage = () => {
                           href={whatsappLink} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-green-600 hover:underline flex items-center"
+                          className="text-green-600 hover:underline inline-flex items-center"
                         >
                           +{whatsappNumber} 
-                          <span className="ml-2 px-2 py-0.5 text-xs bg-green-100 text-green-800 rounded-full">
+                          <span className="ml-2 px-3 py-1 text-xs bg-green-500 text-white rounded-full transition-all hover:bg-green-600">
                             Chat Now
                           </span>
                         </a>
@@ -84,9 +132,9 @@ const ContactPage = () => {
                   </div>
                   
                   {/* Email */}
-                  <div className="flex items-start">
-                    <div className="mt-1 mr-4 text-primary">
-                      <FaEnvelope size={28} />
+                  <div className="flex items-start transition-all p-4 rounded-lg hover:bg-gray-50">
+                    <div className="mt-1 mr-4 text-primary bg-primary/10 p-3 rounded-full">
+                      <FaEnvelope size={24} />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Email</h3>
@@ -99,29 +147,31 @@ const ContactPage = () => {
               </div>
               
               {/* Office Hours */}
-              <div className="mt-8 p-6 bg-gray-50 rounded-lg">
+              <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-100">
                 <div className="flex items-start mb-4">
-                  <FaClock className="text-primary mt-1 mr-3" size={24} />
+                  <FaClock className="text-primary mt-1 mr-3 bg-primary/10 p-2 rounded-full" size={24} />
                   <h3 className="text-xl font-semibold">Office Hours</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <ul className="space-y-2 text-gray-700">
-                    <li className="flex justify-between">
+                    <li className="flex justify-between items-center border-b pb-2">
                       <span>Monday - Friday:</span>
-                      <span>8:00 AM - 5:00 PM</span>
+                      <span className="font-medium">8:00 AM - 5:00 PM</span>
                     </li>
-                    <li className="flex justify-between">
+                    <li className="flex justify-between items-center border-b pb-2">
                       <span>Saturday:</span>
-                      <span>9:00 AM - 1:00 PM</span>
+                      <span className="font-medium">9:00 AM - 1:00 PM</span>
                     </li>
-                    <li className="flex justify-between">
+                    <li className="flex justify-between items-center">
                       <span>Sunday:</span>
-                      <span>Closed</span>
+                      <span className="font-medium text-red-500">Closed</span>
                     </li>
                   </ul>
-                  <div className="text-gray-700">
+                  <div className="text-gray-700 flex flex-col justify-center">
                     <p><strong>Time Zone:</strong> East Africa Time (EAT)</p>
-                    <p className="mt-2"><strong>Note:</strong> Our staff is available for emergencies outside of regular office hours. Please contact us via WhatsApp for urgent matters.</p>
+                    <p className="mt-2 bg-yellow-50 p-3 rounded-lg border border-yellow-100 text-sm">
+                      <strong className="text-yellow-700">Note:</strong> Our staff is available for emergencies outside of regular office hours. Please contact us via WhatsApp for urgent matters.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -130,36 +180,21 @@ const ContactPage = () => {
               <div className="mt-8 text-center">
                 <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
                 <div className="flex justify-center space-x-6">
-                  <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="Facebook">
-                    <FaFacebook size={28} />
+                  <a href="#" className="text-primary bg-primary/10 p-3 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Facebook">
+                    <FaFacebook size={24} />
                   </a>
-                  <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="Twitter">
-                    <FaTwitter size={28} />
+                  <a href="#" className="text-primary bg-primary/10 p-3 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+                    <FaTwitter size={24} />
                   </a>
-                  <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="Instagram">
-                    <FaInstagram size={28} />
+                  <a href="#" className="text-primary bg-primary/10 p-3 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+                    <FaInstagram size={24} />
                   </a>
-                  <a href={whatsappLink} className="text-green-500 hover:text-green-600 transition-colors" aria-label="WhatsApp">
-                    <FaWhatsapp size={28} />
+                  <a href={whatsappLink} className="text-green-500 bg-green-100 p-3 rounded-full hover:bg-green-500 hover:text-white transition-colors" aria-label="WhatsApp">
+                    <FaWhatsapp size={24} />
                   </a>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section (Placeholder) */}
-      <section className="py-8">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center">Find Us</h2>
-            <div className="h-80 bg-neutral rounded-lg flex items-center justify-center">
-              <p className="text-white text-xl font-semibold">Map of Garowe Office Location</p>
-            </div>
-            <p className="text-sm text-gray-500 mt-2 text-center">
-              In a production environment, this would be replaced with an actual map showing the office location.
-            </p>
           </div>
         </div>
       </section>
@@ -169,30 +204,31 @@ const ContactPage = () => {
         <div className="container-custom">
           <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
           
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-2">What areas of Somalia do you operate in?</h3>
-              <p className="text-gray-700">
-                SOWDA operates throughout Somalia, with a focus on Puntland, Somaliland, and South Central regions.
-                Our headquarters is in Garowe, Puntland.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-2">How can I volunteer with SOWDA?</h3>
-              <p className="text-gray-700">
-                You can volunteer by contacting us directly at
-                <a href="mailto:info@sowda.org" className="text-primary hover:underline"> info@sowda.org</a>. We welcome volunteers with various skills and backgrounds.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-2">How can organizations partner with SOWDA?</h3>
-              <p className="text-gray-700">
-                Organizations interested in partnerships can reach out via email at
-                <a href="mailto:info@sowda.org" className="text-primary hover:underline"> info@sowda.org</a> with details about potential collaboration opportunities.
-              </p>
-            </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqData.map((faq) => (
+              <div key={faq.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
+                <button 
+                  className="w-full text-left p-6 flex justify-between items-center focus:outline-none"
+                  onClick={() => toggleFAQ(faq.id)}
+                >
+                  <h3 className="text-xl font-semibold pr-8">{faq.question}</h3>
+                  <span className="text-primary flex-shrink-0">
+                    {openFAQ === faq.id ? <FaChevronUp /> : <FaChevronDown />}
+                  </span>
+                </button>
+                
+                {openFAQ === faq.id && (
+                  <div className="px-6 pb-6 text-gray-700 border-t border-gray-100 pt-4">
+                    <p>{faq.answer}</p>
+                    {faq.id === 2 && (
+                      <a href="mailto:info@sowda.org" className="text-primary hover:underline inline-block mt-2">
+                        Contact us to volunteer
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

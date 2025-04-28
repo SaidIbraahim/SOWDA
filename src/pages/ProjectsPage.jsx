@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { projectsData, projectCategories, projectStatuses } from '../data/projectsData';
-import { FaCalendarAlt, FaCheckCircle, FaSpinner, FaHourglass, FaProjectDiagram } from 'react-icons/fa';
+import { FaCalendarAlt, FaCheckCircle, FaSpinner, FaHourglass, FaProjectDiagram, FaHandHoldingHeart } from 'react-icons/fa';
 import ImageComponent from '../components/common/ImageComponent';
 
 const ProjectsPage = () => {
@@ -166,6 +166,26 @@ const ProjectsPage = () => {
                     <div className="absolute top-2 right-2 bg-white bg-opacity-80 p-1.5 rounded-full">
                       {getStatusIcon(project.status)}
                     </div>
+                    
+                    {/* GoFundMe Donate Button for Hospital Project */}
+                    {project.goFundMeLink && (
+                      <div className="absolute bottom-3 right-3">
+                        <a 
+                          href={project.goFundMeLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md hover:bg-red-600 transition-colors"
+                          onClick={(e) => {
+                            // Track click for analytics purposes
+                            console.log('Donation button clicked');
+                            // Allow the link to proceed
+                          }}
+                        >
+                          <FaHandHoldingHeart />
+                          Support the Clinic
+                        </a>
+                      </div>
+                    )}
                   </div>
                   <div className="p-5">
                     <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -196,6 +216,19 @@ const ProjectsPage = () => {
                     {expandedProject === project.id && (
                       <div className="mt-4 pt-4 border-t border-gray-100">
                         <p className="text-gray-700">{project.description}</p>
+                        
+                        {/* GoFundMe Link in Expanded View for Hospital Project */}
+                        {project.goFundMeLink && (
+                          <a
+                            href={project.goFundMeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-flex items-center gap-2 text-red-500 hover:text-red-600"
+                          >
+                            <FaHandHoldingHeart />
+                            Support the Mother-Child-Clinic in Bosaso
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>
