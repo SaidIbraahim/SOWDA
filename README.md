@@ -83,6 +83,68 @@ npm install -g netlify-cli
 netlify deploy
 ```
 
+## Image Optimization
+
+For optimal performance, we use several image optimization techniques:
+
+### 1. Run Image Optimization Script
+
+Before adding new images to the project, optimize them with:
+
+```bash
+# Install dependencies (first time only)
+npm install sharp glob --save-dev
+
+# Run the optimization script
+node scripts/optimizeImages.js
+```
+
+This will:
+- Create optimized JPG/PNG versions
+- Create WebP versions (better compression, modern browsers)
+- Create AVIF versions (best compression, newer browsers)
+
+### 2. Use WebP/AVIF formats
+
+In your components, use the optimized formats:
+
+```js
+// Instead of this
+import image from '../assets/images/example.jpg';
+
+// Use this for better performance
+import image from '../assets/images/example.webp';
+```
+
+### 3. ImageComponent Best Practices
+
+Always use the `ImageComponent` for images, which provides:
+- Lazy loading
+- Placeholder during loading
+- Priority loading for above-the-fold images
+
+```jsx
+import ImageComponent from '../components/common/ImageComponent';
+import { ExampleImage } from '../assets/images';
+
+// Regular image (lazy loaded)
+<ImageComponent 
+  src={ExampleImage} 
+  alt="Description of image" 
+  className="h-64 w-full" 
+/>
+
+// Priority image (above the fold)
+<ImageComponent 
+  src={ExampleImage} 
+  alt="Description of image" 
+  className="h-64 w-full"
+  priority={true}
+/>
+```
+
+For the best user experience, keep image file sizes small and use appropriate dimensions.
+
 ## License
 
 All rights reserved by SOWDA.

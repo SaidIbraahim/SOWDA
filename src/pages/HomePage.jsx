@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FaHandsHelping, FaChartLine, FaUsers, FaHeart } from 'react-icons/fa';
+import { FGMAwareness, IDPCamp, CleanWater } from '../assets/images';
+import ImageComponent from '../components/common/ImageComponent';
 
 const HomePage = () => {
   return (
@@ -99,42 +101,63 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Program 1 */}
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-48 bg-neutral"></div>
-              <div className="p-6">
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+              <div className="relative h-64 w-full overflow-hidden">
+                <ImageComponent 
+                  src={FGMAwareness} 
+                  alt="FGM Awareness Campaign: Women and children participating in educational program to end female genital mutilation in Somalia" 
+                  className="w-full h-full object-cover"
+                  priority={true}
+                />
+              </div>
+              <div className="p-5">
                 <h3 className="text-xl font-semibold mb-2">FGM Prevention</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-3">
                   Campaigns and education to end female genital mutilation in Somali communities.
                 </p>
-                <Link to="/programs" className="text-primary font-medium hover:underline">
+                <Link to="/programs" className="text-primary font-medium hover:underline inline-block">
                   Learn more →
                 </Link>
               </div>
             </div>
 
             {/* Program 2 */}
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-48 bg-neutral"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">HIV/AIDS Support</h3>
-                <p className="text-gray-600 mb-4">
-                  Providing education, testing, and support services for affected individuals.
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+              <div className="relative h-64 w-full overflow-hidden">
+                <ImageComponent 
+                  src={CleanWater} 
+                  alt="Clean Water Initiative: Water well installation and purification systems providing clean drinking water to rural communities" 
+                  className="w-full h-full object-cover"
+                  priority={true}
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-semibold mb-2">Clean Water Initiative</h3>
+                <p className="text-gray-600 mb-3">
+                  Installation of water wells and purification systems for communities facing water scarcity.
                 </p>
-                <Link to="/programs" className="text-primary font-medium hover:underline">
+                <Link to="/programs" className="text-primary font-medium hover:underline inline-block">
                   Learn more →
                 </Link>
               </div>
             </div>
 
             {/* Program 3 */}
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-48 bg-neutral"></div>
-              <div className="p-6">
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+              <div className="relative h-64 w-full overflow-hidden">
+                <ImageComponent 
+                  src={IDPCamp} 
+                  alt="IDP Camp Services: Internally displaced families receiving shelter, food assistance and support services at a camp in Somalia" 
+                  className="w-full h-full object-cover"
+                  priority={true}
+                />
+              </div>
+              <div className="p-5">
                 <h3 className="text-xl font-semibold mb-2">IDP Assistance</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-3">
                   Support for internally displaced persons with shelter, food, and essential services.
                 </p>
-                <Link to="/programs" className="text-primary font-medium hover:underline">
+                <Link to="/programs" className="text-primary font-medium hover:underline inline-block">
                   Learn more →
                 </Link>
               </div>

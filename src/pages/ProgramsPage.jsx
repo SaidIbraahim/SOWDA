@@ -1,40 +1,62 @@
+import { 
+  FGMAwareness, 
+  IDPCamp, 
+  DroughtFloodsEmergency, 
+  WomenEmpowermentEducation, 
+  PeaceBuilding, 
+  GreenInitiative 
+} from '../assets/images';
+import ImageComponent from '../components/common/ImageComponent';
+
 const ProgramsPage = () => {
   const programs = [
     {
       id: 1,
       title: "FGM Prevention & Awareness",
       description: "SOWDA works to end Female Genital Mutilation through education, community engagement, and advocacy. Our programs include awareness campaigns, training for health workers, and support for survivors.",
-      icon: "🎗️"
+      icon: "🎗️",
+      image: FGMAwareness,
+      altText: "FGM Awareness Campaign: women and children participating in an educational workshop about ending female genital mutilation"
     },
     {
       id: 2,
       title: "HIV/AIDS Support Services",
       description: "We provide comprehensive support for individuals affected by HIV/AIDS including counseling, testing services, prevention education, and community awareness programs to reduce stigma.",
-      icon: "🩺"
+      icon: "🩺",
+      image: WomenEmpowermentEducation,
+      altText: "Women participating in HIV/AIDS education and support workshop in Somalia"
     },
     {
       id: 3,
       title: "IDP Assistance Programs",
       description: "Our initiatives support internally displaced persons with emergency relief supplies, shelter, food assistance, healthcare services, and psychosocial support for those affected by conflict and natural disasters.",
-      icon: "🏠"
+      icon: "🏠",
+      image: IDPCamp,
+      altText: "Internally displaced persons receiving shelter and support services at an IDP camp in Somalia"
     },
     {
       id: 4,
       title: "Emergency Response",
       description: "SOWDA responds quickly to humanitarian crises in Somalia, providing immediate assistance with food, water, shelter, and medical aid to those affected by emergencies.",
-      icon: "🚑"
+      icon: "🚑",
+      image: DroughtFloodsEmergency,
+      altText: "Emergency response workers providing humanitarian aid during drought and flood emergency in Somalia"
     },
     {
       id: 5,
       title: "Environmental Conservation",
       description: "We implement projects focused on sustainable environmental practices, including reforestation, clean water initiatives, and education about climate change adaptation.",
-      icon: "🌱"
+      icon: "🌱",
+      image: GreenInitiative,
+      altText: "Environmental conservation projects focused on sustainable practices and reforestation efforts in Somalia"
     },
     {
       id: 6,
       title: "Peace Building & Conflict Resolution",
       description: "Our programs focus on community reconciliation, dialogue facilitation, and training local leaders in conflict resolution techniques to build lasting peace.",
-      icon: "☮️"
+      icon: "☮️",
+      image: PeaceBuilding,
+      altText: "Community members participating in peace building and conflict resolution workshop in Somalia"
     }
   ];
 
@@ -66,13 +88,23 @@ const ProgramsPage = () => {
             {programs.map((program) => (
               <div 
                 key={program.id} 
-                className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
               >
-                <div className="flex items-start mb-4">
-                  <span className="text-4xl mr-4">{program.icon}</span>
-                  <h3 className="text-2xl font-semibold">{program.title}</h3>
+                <div className="relative h-72 w-full overflow-hidden">
+                  <ImageComponent 
+                    src={program.image} 
+                    alt={program.altText} 
+                    className="w-full h-full object-cover"
+                    priority={program.id <= 2}
+                  />
                 </div>
-                <p className="text-gray-700">{program.description}</p>
+                <div className="p-5">
+                  <div className="flex items-start mb-3">
+                    <span className="text-4xl mr-4 flex-shrink-0">{program.icon}</span>
+                    <h3 className="text-2xl font-semibold">{program.title}</h3>
+                  </div>
+                  <p className="text-gray-700">{program.description}</p>
+                </div>
               </div>
             ))}
           </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { projectsData, projectCategories, projectStatuses } from '../data/projectsData';
 import { FaCalendarAlt, FaCheckCircle, FaSpinner, FaHourglass, FaProjectDiagram } from 'react-icons/fa';
+import ImageComponent from '../components/common/ImageComponent';
 
 const ProjectsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -155,35 +156,38 @@ const ProjectsPage = () => {
                   key={project.id} 
                   className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
                 >
-                  <div className="h-48 bg-primary/10 relative flex items-center justify-center">
-                    <FaProjectDiagram className="text-6xl text-primary/60" />
-                    <div className="absolute top-0 right-0 p-3">
+                  <div className="relative h-64 w-full overflow-hidden">
+                    <ImageComponent 
+                      src={project.image} 
+                      alt={project.altText || project.title} 
+                      className="w-full h-full object-cover"
+                      priority={project.id <= 3}
+                    />
+                    <div className="absolute top-2 right-2 bg-white bg-opacity-80 p-1.5 rounded-full">
                       {getStatusIcon(project.status)}
                     </div>
                   </div>
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold">{project.title}</h3>
-                    </div>
+                  <div className="p-5">
+                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                     
-                    <div className="mb-3 flex items-center text-sm gap-2">
+                    <div className="mb-3 flex flex-wrap items-center text-sm gap-2">
                       <span className={`rounded-full px-3 py-1 ${getCategoryColor(project.category)}`}>{project.category}</span>
                       <span className="bg-gray-100 rounded-full px-3 py-1 text-gray-700">{project.status}</span>
                     </div>
                     
-                    <p className="text-gray-700 mb-4 line-clamp-3">
+                    <p className="text-gray-700 mb-3 line-clamp-3">
                       {project.description}
                     </p>
                     
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-gray-600 text-sm">
-                        <FaCalendarAlt className="mr-2" />
-                        <span>{getDateDisplay(project)}</span>
+                        <FaCalendarAlt className="mr-2 flex-shrink-0" />
+                        <span className="truncate">{getDateDisplay(project)}</span>
                       </div>
                       
                       <button
                         onClick={() => toggleProjectExpand(project.id)}
-                        className="text-primary hover:underline text-sm font-medium"
+                        className="text-primary hover:underline text-sm font-medium ml-2 flex-shrink-0"
                       >
                         {expandedProject === project.id ? 'Show Less' : 'Read More'}
                       </button>

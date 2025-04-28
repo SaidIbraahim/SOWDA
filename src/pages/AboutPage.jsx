@@ -1,4 +1,6 @@
 import { FaCheck } from 'react-icons/fa';
+import { OurStory } from '../assets/images';
+import ImageComponent from '../components/common/ImageComponent';
 
 const AboutPage = () => {
   return (
@@ -34,7 +36,14 @@ const AboutPage = () => {
                 international organizations to create sustainable change in Somali communities.
               </p>
             </div>
-            <div className="bg-neutral h-80 rounded-lg"></div>
+            <div className="rounded-lg overflow-hidden shadow-md h-96">
+              <ImageComponent 
+                src={OurStory} 
+                alt="SOWDA team members working with local communities in Somalia" 
+                className="w-full h-full object-cover"
+                priority={true}
+              />
+            </div>
           </div>
         </div>
       </section>
