@@ -24,17 +24,17 @@ const ContactPage = () => {
     {
       id: 2,
       question: "How can I volunteer with SOWDA?",
-      answer: "You can volunteer by contacting us directly at info@sowda.org. We welcome volunteers with various skills and backgrounds, including healthcare professionals, educators, project managers, and communications specialists."
+      answer: "You can volunteer by contacting us directly at info@sowdawomen.org. We welcome volunteers with various skills and backgrounds, including healthcare professionals, educators, project managers, and communications specialists."
     },
     {
       id: 3,
       question: "How can organizations partner with SOWDA?",
-      answer: "Organizations interested in partnerships can reach out via email at info@sowda.org with details about potential collaboration opportunities. We're open to partnerships with NGOs, government agencies, academic institutions, and private sector entities."
+      answer: "Organizations interested in partnerships can reach out via email at info@sowdawomen.org with details about potential collaboration opportunities. We're open to partnerships with NGOs, government agencies, academic institutions, and private sector entities."
     },
     {
       id: 4,
       question: "Do you accept donations?",
-      answer: "Yes, we accept donations that support our various programs and initiatives. You can donate via bank transfer, mobile money, or through our partner platforms. For more information, please contact us at info@sowda.org."
+      answer: "Yes, we accept donations that support our various programs and initiatives. You can donate via bank transfer, mobile money, or through our partner platforms. For more information, please contact us at info@sowdawomen.org."
     },
     {
       id: 5,
@@ -44,12 +44,12 @@ const ContactPage = () => {
     {
       id: 6,
       question: "How can I report an issue or provide feedback?",
-      answer: "You can report issues or provide feedback by emailing info@sowda.org or calling our main office number. We value transparency and continuous improvement in all our operations."
+      answer: "You can report issues or provide feedback by emailing info@sowdawomen.org or calling our main office number. We value transparency and continuous improvement in all our operations."
     },
     {
       id: 7,
       question: "Do you provide internship opportunities?",
-      answer: "Yes, we offer internship opportunities for students and recent graduates interested in humanitarian work, development, and nonprofit management. Please send your resume and a cover letter to info@sowda.org."
+      answer: "Yes, we offer internship opportunities for students and recent graduates interested in humanitarian work, development, and nonprofit management. Please send your resume and a cover letter to info@sowdawomen.org."
     }
   ];
 
@@ -139,7 +139,9 @@ const ContactPage = () => {
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Email</h3>
                       <p className="text-gray-700">
-                        Support or General Inquiries: <a href="mailto:info@sowda.org" className="text-primary hover:underline">info@sowda.org</a><br />
+                        General Inquiries: <a href="mailto:info@sowdawomen.org" className="text-primary hover:underline">info@sowdawomen.org</a><br />
+                        Staff: <a href="mailto:Hoodo@sowdawomen.org" className="text-primary hover:underline">Hoodo@sowdawomen.org</a>,
+                        <a href="mailto:Amal@sowdawomen.org" className="text-primary hover:underline"> Amal@sowdawomen.org</a>
                       </p>
                     </div>
                   </div>
@@ -155,15 +157,15 @@ const ContactPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex justify-between items-center border-b pb-2">
-                      <span>Monday - Friday:</span>
+                      <span>Monday - Thursday:</span>
                       <span className="font-medium">8:00 AM - 5:00 PM</span>
                     </li>
                     <li className="flex justify-between items-center border-b pb-2">
-                      <span>Saturday:</span>
-                      <span className="font-medium">9:00 AM - 1:00 PM</span>
+                      <span>Saturday - Sunday:</span>
+                      <span className="font-medium">8:00 AM - 5:00 PM</span>
                     </li>
                     <li className="flex justify-between items-center">
-                      <span>Sunday:</span>
+                      <span>Friday:</span>
                       <span className="font-medium text-red-500">Closed</span>
                     </li>
                   </ul>
@@ -221,7 +223,7 @@ const ContactPage = () => {
                   <div className="px-6 pb-6 text-gray-700 border-t border-gray-100 pt-4">
                     <p>{faq.answer}</p>
                     {faq.id === 2 && (
-                      <a href="mailto:info@sowda.org" className="text-primary hover:underline inline-block mt-2">
+                      <a href="mailto:info@sowdawomen.org" className="text-primary hover:underline inline-block mt-2">
                         Contact us to volunteer
                       </a>
                     )}
