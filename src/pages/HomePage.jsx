@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaHandsHelping, FaChartLine, FaUsers, FaHeart } from 'react-icons/fa';
-import { FGMAwareness, IDPCamp, CleanWater } from '../assets/images';
+import { FGMAwareness, IDPCamp, HealthcareCenterOngoing, PeaceBuilding } from '../assets/images';
 import ImageComponent from '../components/common/ImageComponent';
 
 const HomePage = () => {
@@ -141,6 +141,27 @@ const HomePage = () => {
                 </Link>
               </div>
             </div>
+
+            {/* Program 3 */}
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+              <div className="relative h-64 w-full overflow-hidden">
+                <ImageComponent 
+                  src={HealthcareCenterOngoing} 
+                  alt="Healthcare Center: Providing essential medical services to women and children in the community" 
+                  className="w-full h-full object-cover"
+                  priority={true}
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-semibold mb-2">Healthcare Services</h3>
+                <p className="text-gray-600 mb-3">
+                  Providing essential medical care and health education to women and children in the community.
+                </p>
+                <Link to="/programs" className="text-primary font-medium hover:underline inline-block">
+                  Learn more →
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="text-center mt-10">
@@ -159,7 +180,7 @@ const HomePage = () => {
             {/* Hospital Project */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img 
-                src={hospitalImage} 
+                src={HealthcareCenterOngoing} 
                 alt="Hospital Project" 
                 className="w-full h-48 object-cover"
               />
@@ -177,7 +198,7 @@ const HomePage = () => {
             {/* Peace Building Project */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img 
-                src={peaceImage} 
+                src={PeaceBuilding} 
                 alt="Peace Building Project" 
                 className="w-full h-48 object-cover"
               />
