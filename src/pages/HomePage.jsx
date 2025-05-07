@@ -101,7 +101,7 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Program 1 */}
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <div className="relative h-64 w-full overflow-hidden">
                 <ImageComponent 
                   src={FGMAwareness} 
@@ -122,28 +122,7 @@ const HomePage = () => {
             </div>
 
             {/* Program 2 */}
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-              <div className="relative h-64 w-full overflow-hidden">
-                <ImageComponent 
-                  src={CleanWater} 
-                  alt="Clean Water Initiative: Water well installation and purification systems providing clean drinking water to rural communities" 
-                  className="w-full h-full object-cover"
-                  priority={true}
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-semibold mb-2">Clean Water Initiative</h3>
-                <p className="text-gray-600 mb-3">
-                  Installation of water wells and purification systems for communities facing water scarcity.
-                </p>
-                <Link to="/programs" className="text-primary font-medium hover:underline inline-block">
-                  Learn more →
-                </Link>
-              </div>
-            </div>
-
-            {/* Program 3 */}
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <div className="relative h-64 w-full overflow-hidden">
                 <ImageComponent 
                   src={IDPCamp} 
@@ -168,6 +147,50 @@ const HomePage = () => {
             <Link to="/programs" className="btn-primary">
               View All Programs
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-12">
+        <div className="container-custom">
+          <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Hospital Project */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img 
+                src={hospitalImage} 
+                alt="Hospital Project" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Hospital Project</h3>
+                <p className="text-gray-600 mb-4">
+                  Established in 2005, our hospital provides essential healthcare services to women and children in the community.
+                </p>
+                <Link to="/programs" className="text-primary hover:underline">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+
+            {/* Peace Building Project */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img 
+                src={peaceImage} 
+                alt="Peace Building Project" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Peace Building Project</h3>
+                <p className="text-gray-600 mb-4">
+                  Our peace building initiative brings together community leaders to promote dialogue and reconciliation.
+                </p>
+                <Link to="/programs" className="text-primary hover:underline">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
