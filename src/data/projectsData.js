@@ -11,7 +11,6 @@ import {
   DroughtFloodsEmergency, 
   HealthcareCenterOngoing, 
   IDPCamp,
-  CleanWater,
   GreenInitiative
 } from '../assets/images';
 
@@ -22,7 +21,7 @@ const projectsData = [
     category: "Health",
     status: "Ongoing",
     description: "Development of a comprehensive healthcare facility in Bosaso to provide quality medical services to the community. This project aims to improve healthcare access and outcomes for the local population.",
-    startDate: "February 2023",
+    startDate: "2005",
     image: HealthcareCenterOngoing,
     altText: "Somali German Hospital: New healthcare facility being constructed in Bosaso to provide medical services to the local community",
     goFundMeLink: "https://gofund.me/32716c10"
@@ -49,16 +48,6 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Clean Water Initiative",
-    category: "Environment",
-    status: "Completed",
-    description: "Installation of water wells and water purification systems in rural communities facing water scarcity. This project has provided clean drinking water to over 5,000 people.",
-    completionDate: "November 2022",
-    image: CleanWater,
-    altText: "Clean Water Initiative: Water well installation and purification system that provides clean drinking water to rural communities"
-  },
-  {
-    id: 5,
     title: "Youth Education Program",
     category: "Education",
     status: "Ongoing",
@@ -68,17 +57,17 @@ const projectsData = [
     altText: "Youth Education Program: Children receiving educational support, school supplies and learning resources in underserved communities"
   },
   {
-    id: 6,
+    id: 5,
     title: "Peace Building Workshop",
     category: "Peacebuilding",
     status: "Completed",
     description: "A series of community dialogues and workshops focused on conflict resolution, reconciliation, and building sustainable peace in conflict-affected areas.",
-    completionDate: "July 2023",
+    completionDate: "April 2024",
     image: PeaceBuilding,
     altText: "Peace Building Workshop: Community members participating in dialogue session focused on conflict resolution and reconciliation"
   },
   {
-    id: 7,
+    id: 6,
     title: "FGM Awareness Campaign",
     category: "Health",
     status: "Ongoing",
@@ -88,7 +77,7 @@ const projectsData = [
     altText: "FGM Awareness Campaign: Community education session raising awareness about the harmful effects of female genital mutilation"
   },
   {
-    id: 8,
+    id: 7,
     title: "Emergency Food Distribution",
     category: "Emergency",
     status: "Completed",
@@ -98,7 +87,7 @@ const projectsData = [
     altText: "Emergency Food Distribution: Distribution of food packages to drought-affected families in southern Somalia"
   },
   {
-    id: 9,
+    id: 8,
     title: "Community Garden Initiative",
     category: "Environment",
     status: "Upcoming",
@@ -108,7 +97,7 @@ const projectsData = [
     altText: "Community Garden Initiative: Sustainable garden plots being developed to improve food security and provide income for urban families"
   },
   {
-    id: 10,
+    id: 9,
     title: "IDP Support Program",
     category: "Emergency",
     status: "Ongoing",
@@ -118,7 +107,7 @@ const projectsData = [
     altText: "IDP Support Program: Internally displaced persons receiving shelter, supplies, and support services at a camp in Somalia"
   },
   {
-    id: 11,
+    id: 10,
     title: "Digital Literacy for Women",
     category: "Education",
     status: "Upcoming",

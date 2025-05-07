@@ -182,16 +182,20 @@ const ContactPage = () => {
               <div className="mt-8 text-center">
                 <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
                 <div className="flex justify-center space-x-6">
-                  <a href="#" className="text-primary bg-primary/10 p-3 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Facebook">
-                    <FaFacebook size={24} />
-                  </a>
-                  <a href="#" className="text-primary bg-primary/10 p-3 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
-                    <FaTwitter size={24} />
-                  </a>
-                  <a href="#" className="text-primary bg-primary/10 p-3 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+                  <a 
+                    href="https://www.instagram.com/somaliwomendevelopmentagency1_?igsh=bnptcjJ0NmkyaHhu&utm_source=qr" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary bg-primary/10 p-3 rounded-full hover:bg-primary hover:text-white transition-colors" 
+                    aria-label="Instagram"
+                  >
                     <FaInstagram size={24} />
                   </a>
-                  <a href={whatsappLink} className="text-green-500 bg-green-100 p-3 rounded-full hover:bg-green-500 hover:text-white transition-colors" aria-label="WhatsApp">
+                  <a 
+                    href={whatsappLink} 
+                    className="text-green-500 bg-green-100 p-3 rounded-full hover:bg-green-500 hover:text-white transition-colors" 
+                    aria-label="WhatsApp"
+                  >
                     <FaWhatsapp size={24} />
                   </a>
                 </div>

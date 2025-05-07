@@ -1,4 +1,10 @@
 import { Link } from 'react-router-dom';
+import { 
+  WAWA_Logo,
+  MoWDAFA_logo,
+  StopMutilationLogo,
+  PDRC_logo
+} from '../assets/images';
 
 const PartnersPage = () => {
   const partners = [
@@ -6,37 +12,29 @@ const PartnersPage = () => {
       id: 1,
       name: 'WAWA Network',
       description: 'Women as Agents of Change (WAWA) network is a collective of organizations working to promote gender equality and women\'s empowerment across Somalia.',
-      website: '#'
+      website: '#',
+      logo: WAWA_Logo
     },
     {
       id: 2,
       name: 'MoWDAFA',
       description: 'Ministry of Women Development and Family Affairs is a governmental body working to advance the rights and well-being of women and families in Somalia.',
-      website: '#'
+      website: 'https://www.facebook.com/MOWDAFA/',
+      logo: MoWDAFA_logo
     },
     {
       id: 3,
       name: 'Stop Mutilation',
       description: 'A global advocacy organization dedicated to ending female genital mutilation through education, community engagement, and policy reform.',
-      website: '#'
+      website: 'http://beratungsstelle-stop-mutilation-de.org/',
+      logo: StopMutilationLogo
     },
     {
       id: 4,
-      name: 'Somalia Health Coalition',
-      description: 'A network of organizations working to improve healthcare access and services for vulnerable populations across Somalia.',
-      website: '#'
-    },
-    {
-      id: 5,
-      name: 'Environment Somalia',
-      description: 'An environmental organization focused on sustainable development and natural resource management in Somalia.',
-      website: '#'
-    },
-    {
-      id: 6,
-      name: 'Somalia Youth Initiative',
-      description: 'A youth-led organization promoting education, skills development, and civic engagement among Somali youth.',
-      website: '#'
+      name: 'PDRC',
+      description: 'Puntland Development Research Centre (PDRC) is a Local Non-Governmental Organization dedicated to peacebuilding, promotion of democracy, and respect for human rights in Puntland and Somalia.',
+      website: 'https://pdrcsomalia.org/',
+      logo: PDRC_logo
     }
   ];
 
@@ -52,35 +50,32 @@ const PartnersPage = () => {
         </div>
       </section>
 
-      {/* Partners Overview */}
+      {/* Partners Grid */}
       <section className="py-12">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">Collaborating for Change</h2>
-            <p className="text-gray-700">
-              At SOWDA, we believe that partnerships are essential for creating sustainable change.
-              We work with government agencies, non-governmental organizations, community groups,
-              and international partners to implement effective programs that make a real difference.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {partners.map((partner) => (
-              <div key={partner.id} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <div className="h-32 bg-neutral rounded-lg mb-4 flex items-center justify-center">
-                  <h3 className="text-xl font-bold text-white">{partner.name}</h3>
+              <div key={partner.id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                <div className="h-32 mb-4 flex items-center justify-center">
+                  <img 
+                    src={partner.logo} 
+                    alt={`${partner.name} logo`}
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
-                <div>
-                  <p className="text-gray-700 mb-4">{partner.description}</p>
-                  <a
-                    href={partner.website}
-                    className="text-primary font-medium hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit Website →
-                  </a>
-                </div>
+                <h3 className="text-xl font-semibold mb-2">{partner.name}</h3>
+                <p className="text-gray-600 mb-4">{partner.description}</p>
+                <a 
+                  href={partner.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline inline-flex items-center"
+                >
+                  Visit Website
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
             ))}
           </div>

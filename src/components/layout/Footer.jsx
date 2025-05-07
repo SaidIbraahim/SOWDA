@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -65,32 +65,18 @@ const Footer = () => {
                 <FaEnvelope className="text-primary mr-3" />
                 <span className="text-gray-300">info@sowdawomen.org</span>
               </li>
+              <li className="flex items-center">
+                <FaInstagram className="text-primary mr-3" />
+                <a 
+                  href="https://www.instagram.com/somaliwomendevelopmentagency1_?igsh=bnptcjJ0NmkyaHhu&utm_source=qr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  somaliwomendevelopmentagency1_
+                </a>
+              </li>
             </ul>
-
-            {/* Social Icons */}
-            <div className="mt-6 flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-300 hover:text-primary transition-colors"
-                aria-label="Facebook"
-              >
-                <FaFacebook size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-primary transition-colors"
-                aria-label="Twitter"
-              >
-                <FaTwitter size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <FaInstagram size={24} />
-              </a>
-            </div>
           </div>
         </div>
 

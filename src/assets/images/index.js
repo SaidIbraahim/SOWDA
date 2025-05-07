@@ -10,6 +10,10 @@ import Workshop from './Workshop-training.jpeg';
 import CleanWater from './CleanWater.jpeg';
 import GreenInitiative from './GreenInitiative.jpg';
 import OurStory from './OurStory.jpg';
+import WAWA_Logo from './WAWA-Logo.png';
+import MoWDAFA_logo from './MoWDAFA_logo.png';
+import StopMutilationLogo from './Stop mutilation Logo.png';
+import PDRC_logo from './PDRC-logo.png';
 
 export {
   IDPCamp,
@@ -24,4 +28,8 @@ export {
   CleanWater,
   GreenInitiative,
   OurStory,
+  WAWA_Logo,
+  MoWDAFA_logo,
+  StopMutilationLogo,
+  PDRC_logo
 }; 
