@@ -1,5 +1,5 @@
 // Google Analytics 4 configuration
-export const GA_TRACKING_ID = 'G-XXXXXXXXXX'; // Replace with your GA4 measurement ID
+export const GA_TRACKING_ID = 'G-B5NJWKHV4R'; // GA4 Measurement ID
 
 // Initialize GA4
 export const initGA = () => {
@@ -11,6 +11,7 @@ export const initGA = () => {
     gtag('js', new Date());
     gtag('config', GA_TRACKING_ID, {
       page_path: window.location.pathname,
+      stream_id: '11196818354' // Adding stream ID for better tracking
     });
   }
 };
@@ -20,6 +21,7 @@ export const pageview = (url) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('config', GA_TRACKING_ID, {
       page_path: url,
+      stream_id: '11196818354'
     });
   }
 };
@@ -31,6 +33,7 @@ export const event = ({ action, category, label, value }) => {
       event_category: category,
       event_label: label,
       value: value,
+      stream_id: '11196818354'
     });
   }
 };
