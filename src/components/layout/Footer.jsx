@@ -32,7 +32,7 @@ const Footer = () => {
               <li>Garowe, Puntland</li>
               <li>Somalia</li>
               <li>Email: info@sowdawomen.org</li>
-              <li>Phone: +252 XXX XXX XXX</li>
+              <li>Phone: +252907736523</li>
             </ul>
           </div>
 
