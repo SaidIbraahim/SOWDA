@@ -1,150 +1,188 @@
 # SOWDA - Somali Women Development Agency Website
 
-This is the official website for the Somali Women Development Agency (SOWDA), a grassroots organization making an impact across Somalia through various programs.
+A modern, responsive website for the Somali Women Development Agency (SOWDA), built with React and optimized for performance and SEO.
 
-## Features
+## 🌟 Features
 
-- Responsive design using TailwindCSS
-- Modern React components
-- Image gallery with OneDrive integration
-- Contact and support forms
-- Detailed information about programs and initiatives
+- **Modern UI/UX**: Clean, responsive design optimized for all devices
+- **SEO Optimized**: Built-in SEO components and meta tags
+- **Performance**: Lazy loading images and optimized assets
+- **Analytics**: Google Analytics 4 integration
+- **Accessibility**: WCAG 2.1 compliant components
+- **Internationalization**: Ready for multiple languages
 
-## Tech Stack
-
-- **Frontend**: React + Vite
-- **Styling**: TailwindCSS
-- **Routing**: React Router
-- **Icons**: React Icons
-- **Deployment**: Deployable to Vercel or Netlify
-
-## Project Structure
-
-```
-sowda/
-├── public/               # Static files
-├── src/
-│   ├── assets/           # Images and other assets
-│   ├── components/       # Reusable components
-│   │   ├── layout/       # Layout components (Navbar, Footer)
-│   │   └── ui/           # UI components
-│   ├── data/             # Data files (gallery images)
-│   └── pages/            # Page components
-├── index.html            # HTML entry point
-└── package.json          # Dependencies and scripts
-```
-
-## Setup and Development
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v14+)
+- Node.js (v16 or higher)
 - npm or yarn
+- Git
 
 ### Installation
 
-1. Clone the repository
-   ```bash
-   git clone https://github.com/your-username/sowda-website.git
-   cd sowda-website
-   ```
-
-2. Install dependencies
-   ```bash
-   npm install
-   ```
-
-3. Start the development server
-   ```bash
-   npm run dev
-   ```
-
-4. Open your browser and visit `http://localhost:5173`
-
-## Gallery Configuration
-
-The gallery uses OneDrive links to display images. You can update these links by editing the `src/data/galleryData.js` file.
-
-## Deployment
-
-This project can be easily deployed to Vercel or Netlify:
-
-### Vercel Deployment
-
+1. Clone the repository:
 ```bash
-npm install -g vercel
-vercel
+git clone https://github.com/yourusername/sowda.git
+cd sowda
 ```
 
-### Netlify Deployment
-
+2. Install dependencies:
 ```bash
-npm install -g netlify-cli
-netlify deploy
+npm install
 ```
 
-## Image Optimization
-
-For optimal performance, we use several image optimization techniques:
-
-### 1. Run Image Optimization Script
-
-Before adding new images to the project, optimize them with:
-
+3. Start the development server:
 ```bash
-# Install dependencies (first time only)
-npm install sharp glob --save-dev
-
-# Run the optimization script
-node scripts/optimizeImages.js
+npm run dev
 ```
 
-This will:
-- Create optimized JPG/PNG versions
-- Create WebP versions (better compression, modern browsers)
-- Create AVIF versions (best compression, newer browsers)
-
-### 2. Use WebP/AVIF formats
-
-In your components, use the optimized formats:
-
-```js
-// Instead of this
-import image from '../assets/images/example.jpg';
-
-// Use this for better performance
-import image from '../assets/images/example.webp';
+4. Build for production:
+```bash
+npm run build
 ```
 
-### 3. ImageComponent Best Practices
+## 📁 Project Structure
 
-Always use the `ImageComponent` for images, which provides:
-- Lazy loading
-- Placeholder during loading
-- Priority loading for above-the-fold images
+```
+sowda/
+├── src/
+│   ├── assets/          # Images and static assets
+│   ├── components/      # Reusable components
+│   │   ├── common/     # Shared components
+│   │   ├── layout/     # Layout components
+│   │   └── utils/      # Utility components
+│   ├── data/           # Static data and content
+│   ├── pages/          # Page components
+│   ├── utils/          # Utility functions
+│   ├── App.jsx         # Main App component
+│   └── main.jsx        # Entry point
+├── public/             # Public assets
+└── scripts/            # Build and optimization scripts
+```
 
+## 🛠️ Key Components
+
+### 1. SEO Component
 ```jsx
-import ImageComponent from '../components/common/ImageComponent';
-import { ExampleImage } from '../assets/images';
+import SEO from '../components/common/SEO';
 
-// Regular image (lazy loaded)
-<ImageComponent 
-  src={ExampleImage} 
-  alt="Description of image" 
-  className="h-64 w-full" 
+<SEO 
+  title="Page Title"
+  description="Page description"
+  structuredData={schema}
 />
+```
 
-// Priority image (above the fold)
-<ImageComponent 
-  src={ExampleImage} 
-  alt="Description of image" 
-  className="h-64 w-full"
+### 2. LazyImage Component
+```jsx
+import LazyImage from '../components/common/LazyImage';
+
+<LazyImage
+  src={imageSource}
+  alt="Descriptive alt text"
+  className="w-full h-48 object-cover"
   priority={true}
 />
 ```
 
-For the best user experience, keep image file sizes small and use appropriate dimensions.
+### 3. DonateButton Component
+```jsx
+import DonateButton from '../components/common/DonateButton';
 
-## License
+<DonateButton 
+  text="Donate Now"
+  url="https://gofund.me/32716c10"
+/>
+```
 
-All rights reserved by SOWDA.
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env` file in the root directory:
+```env
+VITE_GA_TRACKING_ID=your-ga-tracking-id
+VITE_API_URL=your-api-url
+```
+
+### Analytics Setup
+The project uses Google Analytics 4. Configure your tracking ID in the environment variables.
+
+## 📱 Responsive Design
+
+The website is built with a mobile-first approach using Tailwind CSS:
+- Mobile: < 640px
+- Tablet: 640px - 1024px
+- Desktop: > 1024px
+
+## 🎨 Styling
+
+The project uses Tailwind CSS for styling. Key color variables:
+```css
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f5f5f5;
+  --accent-color: #e74c3c;
+  --text-color: #333;
+}
+```
+
+## 🚀 Performance Optimization
+
+1. **Image Optimization**
+   - Lazy loading for images below the fold
+   - Priority loading for above-the-fold images
+   - WebP format with fallbacks
+
+2. **Code Splitting**
+   - Route-based code splitting
+   - Component lazy loading
+
+3. **Caching**
+   - Static asset caching
+   - Service worker for offline support
+
+## 📊 Analytics
+
+The project includes:
+- Page view tracking
+- Event tracking
+- User behavior analysis
+- Performance monitoring
+
+## 🔍 SEO Features
+
+1. **Meta Tags**
+   - Dynamic title and description
+   - Open Graph tags
+   - Twitter cards
+
+2. **Structured Data**
+   - Organization schema
+   - BreadcrumbList schema
+   - Article schema
+
+3. **Technical SEO**
+   - Sitemap generation
+   - robots.txt
+   - Canonical URLs
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)

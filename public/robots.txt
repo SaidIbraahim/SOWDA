@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /programs
+Allow: /gallery
+Allow: /support
+Allow: /contact
+
+# Sitemap location
+Sitemap: https://sowdawomen.org/sitemap.xml
+
+# Disallow admin and private routes
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/ 

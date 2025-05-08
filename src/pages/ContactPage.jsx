@@ -1,5 +1,6 @@
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaClock, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { useState } from 'react';
+import SEO from '../components/common/SEO';
 
 const ContactPage = () => {
   // WhatsApp link
@@ -53,8 +54,36 @@ const ContactPage = () => {
     }
   ];
 
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Somali Women Development Agency (SOWDA)",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Garowe, Puntland",
+        "addressLocality": "Garowe",
+        "addressRegion": "Puntland",
+        "addressCountry": "Somalia"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+252-90-1234567",
+        "contactType": "customer service",
+        "email": "info@sowdawomen.org",
+        "availableLanguage": ["English", "Somali"]
+      }
+    }
+  };
+
   return (
     <div>
+      <SEO 
+        title="Contact SOWDA | Somali Women Development Agency | Garowe Office"
+        description="Reach out to SOWDA. Connect with our team to support women's empowerment, peacebuilding, and community development projects across Somalia."
+        structuredData={contactPageSchema}
+      />
       {/* Header Section */}
       <section className="py-12 bg-primary/10">
         <div className="container-custom">
@@ -98,10 +127,7 @@ const ContactPage = () => {
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Phone</h3>
                       <p className="text-gray-700">
-                        Main Office: <a href="tel:+252907736523" className="hover:underline">+252 90 7736523</a><br />
-                        Administration: +252 90 xxxxxxx<br />
-                        Programs: +252 90 xxxxxx
-                      </p>
+                         Office: <a href="tel:+252907736523" className="hover:underline">+252 90 7736523</a></p>
                     </div>
                   </div>
                 </div>
@@ -137,12 +163,20 @@ const ContactPage = () => {
                       <FaEnvelope size={24} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">Email</h3>
-                      <p className="text-gray-700">
-                        General Inquiries: <a href="mailto:info@sowdawomen.org" className="text-primary hover:underline">info@sowdawomen.org</a><br />
-                        Staff: <a href="mailto:Hoodo@sowdawomen.org" className="text-primary hover:underline">Hoodo@sowdawomen.org</a>,
-                        <a href="mailto:Amal@sowdawomen.org" className="text-primary hover:underline"> Amal@sowdawomen.org</a>
-                      </p>
+                      <h3 className="text-lg font-semibold mb-4">Email</h3>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="text-gray-600 text-sm mb-1">General Inquiries</p>
+                          <a href="mailto:info@sowdawomen.org" className="text-primary hover:underline">info@sowdawomen.org</a>
+                        </div>
+                        <div>
+                          <p className="text-gray-600 text-sm mb-1">Staff</p>
+                          <a href="mailto:hoodo@sowdawomen.org" className="text-primary hover:underline">Hoodo@sowdawomen.org</a>
+                        </div>
+                        <div>
+                          <a href="mailto:amal@sowdawomen.org" className="text-primary hover:underline">Amal@sowdawomen.org</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

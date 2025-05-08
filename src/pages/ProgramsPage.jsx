@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaHandsHelping, FaChartLine, FaUsers, FaHeart } from 'react-icons/fa';
 import { 
   FGMAwareness, 
   IDPCamp, 
@@ -6,7 +9,8 @@ import {
   PeaceBuilding, 
   GreenInitiative 
 } from '../assets/images';
-import ImageComponent from '../components/common/ImageComponent';
+import LazyImage from '../components/common/LazyImage';
+import SEO from '../components/common/SEO';
 
 const ProgramsPage = () => {
   const programs = [
@@ -60,8 +64,38 @@ const ProgramsPage = () => {
     }
   ];
 
+  const programsPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "FGM Prevention",
+        "description": "Campaigns and education to end female genital mutilation in Somali communities."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "IDP Assistance",
+        "description": "Support for internally displaced persons with shelter, food, and essential services."
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Healthcare Services",
+        "description": "Providing essential medical care and health education to women and children."
+      }
+    ]
+  };
+
   return (
     <div>
+      <SEO 
+        title="SOWDA Programs | FGM Elimination, HIV/AIDS Campaigns, IDP Support in Somalia"
+        description="Explore SOWDA's grassroots programs: FGM elimination, HIV/AIDS awareness, supporting IDP communities, emergency response, and environmental protection in Somalia."
+        structuredData={programsPageSchema}
+      />
       {/* Header Section */}
       <section className="py-12 bg-primary/10">
         <div className="container-custom">
@@ -85,17 +119,17 @@ const ProgramsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {programs.map((program) => (
+            {programs.map((program, index) => (
               <div 
                 key={program.id} 
                 className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
               >
                 <div className="relative h-72 w-full overflow-hidden">
-                  <ImageComponent 
-                    src={program.image} 
-                    alt={program.altText} 
-                    className="w-full h-full object-cover"
-                    priority={program.id <= 2}
+                  <LazyImage
+                    src={program.image}
+                    alt={program.title}
+                    className="w-full h-48 object-cover rounded-t-lg"
+                    priority={index < 2}
                   />
                 </div>
                 <div className="p-5">

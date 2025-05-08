@@ -1,11 +1,39 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaHandsHelping, FaChartLine, FaUsers, FaHeart } from 'react-icons/fa';
 import { FGMAwareness, IDPCamp, HealthcareCenterOngoing, PeaceBuilding } from '../assets/images';
-import ImageComponent from '../components/common/ImageComponent';
+import LazyImage from '../components/common/LazyImage';
+import SEO from '../components/common/SEO';
 
 const HomePage = () => {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Somali Women Development Agency (SOWDA)",
+    "url": "https://sowdawomen.org",
+    "logo": "https://sowdawomen.org/logo.png",
+    "description": "SOWDA leads women's empowerment, human rights advocacy, and sustainable development initiatives across Garowe and Somalia.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Garowe, Puntland",
+      "addressLocality": "Garowe",
+      "addressRegion": "Puntland",
+      "addressCountry": "Somalia"
+    },
+    "sameAs": [
+      "https://facebook.com/sowdawomen",
+      "https://twitter.com/sowdawomen"
+    ]
+  };
+
   return (
     <div>
+      <SEO 
+        title="SOWDA | Somali Women Development Agency | Empowering Women in Garowe"
+        description="SOWDA (Somali Women Development Agency) leads women's empowerment, human rights advocacy, and sustainable development initiatives across Garowe and Somalia."
+        structuredData={organizationSchema}
+      />
+      
       {/* Hero Section */}
       <section className="relative bg-dark text-white">
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -103,7 +131,7 @@ const HomePage = () => {
             {/* Program 1 */}
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <div className="relative h-64 w-full overflow-hidden">
-                <ImageComponent 
+                <LazyImage 
                   src={FGMAwareness} 
                   alt="FGM Awareness Campaign: Women and children participating in educational program to end female genital mutilation in Somalia" 
                   className="w-full h-full object-cover"
@@ -124,7 +152,7 @@ const HomePage = () => {
             {/* Program 2 */}
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <div className="relative h-64 w-full overflow-hidden">
-                <ImageComponent 
+                <LazyImage 
                   src={IDPCamp} 
                   alt="IDP Camp Services: Internally displaced families receiving shelter, food assistance and support services at a camp in Somalia" 
                   className="w-full h-full object-cover"
@@ -145,7 +173,7 @@ const HomePage = () => {
             {/* Program 3 */}
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <div className="relative h-64 w-full overflow-hidden">
-                <ImageComponent 
+                <LazyImage 
                   src={HealthcareCenterOngoing} 
                   alt="Healthcare Center: Providing essential medical services to women and children in the community" 
                   className="w-full h-full object-cover"
@@ -179,11 +207,14 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Hospital Project */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img 
-                src={HealthcareCenterOngoing} 
-                alt="Hospital Project" 
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative h-48 w-full overflow-hidden">
+                <LazyImage 
+                  src={HealthcareCenterOngoing} 
+                  alt="Hospital Project" 
+                  className="w-full h-full object-cover"
+                  priority={true}
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Hospital Project</h3>
                 <p className="text-gray-600 mb-4">
@@ -197,11 +228,14 @@ const HomePage = () => {
 
             {/* Peace Building Project */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img 
-                src={PeaceBuilding} 
-                alt="Peace Building Project" 
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative h-48 w-full overflow-hidden">
+                <LazyImage 
+                  src={PeaceBuilding} 
+                  alt="Peace Building Project" 
+                  className="w-full h-full object-cover"
+                  priority={true}
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Peace Building Project</h3>
                 <p className="text-gray-600 mb-4">

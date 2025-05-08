@@ -6,7 +6,6 @@
 import { 
   FGMAwareness,
   IDPCamp,
-  CleanWater,
   OurStory,
   PeaceBuilding,
   GreenInitiative
@@ -15,7 +14,6 @@ import {
 const criticalImages = [
   FGMAwareness,
   IDPCamp,
-  CleanWater,
   OurStory,
   PeaceBuilding,
   GreenInitiative

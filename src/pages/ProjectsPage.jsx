@@ -1,7 +1,10 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { projectsData, projectCategories, projectStatuses } from '../data/projectsData';
 import { FaCalendarAlt, FaCheckCircle, FaSpinner, FaHourglass, FaProjectDiagram, FaHandHoldingHeart } from 'react-icons/fa';
-import ImageComponent from '../components/common/ImageComponent';
+import LazyImage from '../components/common/LazyImage';
+import SEO from '../components/common/SEO';
 
 const ProjectsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -151,17 +154,17 @@ const ProjectsPage = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project) => (
+              {filteredProjects.map((project, index) => (
                 <div 
                   key={project.id} 
                   className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="relative h-64 w-full overflow-hidden">
-                    <ImageComponent 
-                      src={project.image} 
-                      alt={project.altText || project.title} 
-                      className="w-full h-full object-cover"
-                      priority={project.id <= 3}
+                    <LazyImage
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover rounded-t-lg"
+                      priority={index < 2}
                     />
                     <div className="absolute top-2 right-2 bg-white bg-opacity-80 p-1.5 rounded-full">
                       {getStatusIcon(project.status)}

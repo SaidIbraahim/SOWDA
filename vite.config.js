@@ -5,18 +5,27 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    // Allow all hosts including Ngrok
-    host: true,
+    host: true, // Listen on all addresses
+    port: 5173,
+    strictPort: true,
     hmr: {
-      // Allow all hosts for HMR connections
-      clientPort: 443,
-      host: 'f7f0-102-223-191-252.ngrok-free.app'
+      protocol: 'ws',
+      host: 'localhost',
+      port: 5173,
+      clientPort: 5173,
+      timeout: 5000,
+      overlay: true
+    }
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+        },
+      },
     },
-    // Explicitly allow your Ngrok URL
-    allowedHosts: [
-      'f7f0-102-223-191-252.ngrok-free.app',
-      '.ngrok-free.app',  // Allow any ngrok subdomain
-      'localhost',
-    ]
-  }
+  },
 })

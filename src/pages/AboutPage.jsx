@@ -1,10 +1,39 @@
+import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 import { OurStory } from '../assets/images';
-import ImageComponent from '../components/common/ImageComponent';
+import LazyImage from '../components/common/LazyImage';
+import SEO from '../components/common/SEO';
 
 const AboutPage = () => {
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Somali Women Development Agency (SOWDA)",
+      "description": "Learn about SOWDA's mission to foster women's leadership, eliminate harmful practices like FGM, and promote peace and development across Puntland, Somalia.",
+      "foundingDate": "2005",
+      "location": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Garowe",
+          "addressRegion": "Puntland",
+          "addressCountry": "Somalia"
+        }
+      },
+      "areaServed": "Somalia",
+      "keywords": "women development, NGO in Garowe, women empowerment, Somali NGO, FGM prevention"
+    }
+  };
+
   return (
     <div>
+      <SEO 
+        title="About SOWDA | Women's Rights NGO in Puntland | SOWDA Somalia"
+        description="Learn about SOWDA's mission to foster women's leadership, eliminate harmful practices like FGM, and promote peace and development across Puntland, Somalia."
+        structuredData={aboutPageSchema}
+      />
       {/* Header Section */}
       <section className="py-12 bg-primary/10">
         <div className="container-custom">
@@ -37,7 +66,7 @@ const AboutPage = () => {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden shadow-md h-96">
-              <ImageComponent 
+              <LazyImage 
                 src={OurStory} 
                 alt="SOWDA team members working with local communities in Somalia" 
                 className="w-full h-full object-cover"

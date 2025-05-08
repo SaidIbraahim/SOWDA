@@ -7,7 +7,6 @@ import FoodDistribution from './FoodDistribution.jpg';
 import PeaceBuilding from './PeaceBuilding.jpeg';
 import Campaign from './Campaign.jpeg';
 import Workshop from './Workshop-training.jpeg';
-import CleanWater from './CleanWater.jpeg';
 import GreenInitiative from './GreenInitiative.jpg';
 import OurStory from './OurStory.jpg';
 import WAWA_Logo from './WAWA-Logo.png';
@@ -25,7 +24,6 @@ export {
   PeaceBuilding,
   Campaign,
   Workshop,
-  CleanWater,
   GreenInitiative,
   OurStory,
   WAWA_Logo,

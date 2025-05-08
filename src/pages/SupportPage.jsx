@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaHandHoldingHeart, FaHandsHelping, FaUsers } from 'react-icons/fa';
+import SEO from '../components/common/SEO';
 
 const SupportPage = () => {
   // Form state
@@ -39,8 +40,30 @@ const SupportPage = () => {
     }, 1500);
   };
 
+  const supportPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Support SOWDA",
+    "description": "Help us empower Somali women and marginalized communities. Support SOWDA through donations, partnerships, and volunteering opportunities.",
+    "mainEntity": {
+      "@type": "DonateAction",
+      "name": "Donate to SOWDA",
+      "description": "Your support enables us to continue our vital work in Somali communities.",
+      "recipient": {
+        "@type": "Organization",
+        "name": "Somali Women Development Agency (SOWDA)",
+        "url": "https://sowdawomen.org"
+      }
+    }
+  };
+
   return (
     <div>
+      <SEO 
+        title="Support SOWDA | Donate, Volunteer, and Empower Women in Somalia"
+        description="Help us empower Somali women and marginalized communities. Support SOWDA through donations, partnerships, and volunteering opportunities."
+        structuredData={supportPageSchema}
+      />
       {/* Header Section */}
       <section className="py-12 bg-primary/10">
         <div className="container-custom">

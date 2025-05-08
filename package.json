@@ -1,19 +1,28 @@
 {
   "name": "sowda",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/optimize-images.js && node scripts/generate-sitemap.js && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "optimize-images": "node scripts/optimize-images.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "nodemailer": "^7.0.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.0",
+    "react-router-dom": "^6.22.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
@@ -27,8 +36,26 @@
     "globals": "^16.0.0",
     "postcss": "^8.5.3",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.5.2",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.4.17",
     "vite": "^6.3.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
