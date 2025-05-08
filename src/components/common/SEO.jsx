@@ -6,16 +6,22 @@ const SEO = ({
   description, 
   image = '/og-image.jpg',
   type = 'website',
-  structuredData = null 
+  structuredData = null,
+  keywords = 'SOWDA, Somali Women Development Agency, women empowerment, NGO in Somalia, FGM prevention, humanitarian aid, community development',
+  author = 'SOWDA',
+  twitterHandle = '@sowdawomen'
 }) => {
   const location = useLocation();
   const canonicalUrl = `https://sowdawomen.org${location.pathname}`;
+  const fullImageUrl = image.startsWith('http') ? image : `https://sowdawomen.org${image}`;
 
   return (
     <Helmet>
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content={author} />
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph / Facebook */}
@@ -23,14 +29,24 @@ const SEO = ({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:site_name" content="SOWDA - Somali Women Development Agency" />
+      <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={twitterHandle} />
+      <meta name="twitter:creator" content={twitterHandle} />
       <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImageUrl} />
+
+      {/* Additional Meta Tags */}
+      <meta name="robots" content="index, follow" />
+      <meta name="language" content="English" />
+      <meta name="revisit-after" content="7 days" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       {/* Structured Data */}
       {structuredData && (
